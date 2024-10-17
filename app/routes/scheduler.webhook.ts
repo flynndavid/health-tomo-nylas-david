@@ -93,7 +93,8 @@ export async function action({ request }: ActionFunctionArgs) {
         body = {
             booking_id: webhookData?.data?.object.booking_id || "",
             config_id: webhookData?.data?.object.configuration_id || "",
-            type: webhookData.type
+            type: webhookData.type,
+            raw_response: JSON.stringify(webhookData.data.object) // Added raw_response
         };
     }
 
